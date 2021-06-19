@@ -1,37 +1,46 @@
-## Welcome to GitHub Pages
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Multiplication Table</title>
+		<style>
+			.cell {
+				display: inline-block;
+				width: 30px; height: 30px;
+				text-align: right;
+			}
+        	.header {
+				background: lightblue;
+			}
+    	</style>
+	</head>
 
-You can use the [editor on GitHub](https://github.com/Maria-baia/tabelamultiplicacao/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Maria-baia/tabelamultiplicacao/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+	<body>
+    	<h1>Multiplication Table</h1>
+    	<script>
+				document.write('<span class="cell header">&times;</span>');
+				for (let i = 0; i <= 10; i++) {
+        			document.write('<span class="cell header">' + i + '</span>');
+        		}
+        		document.write('<br>');
+        		for (let i = 0; i <= 10; i++) {
+					document.write('<span class="cell header">' + i + '</span>');
+					for(let j=0;j<=10;j++){	
+        				document.write('<span class="cell header">' + i*j + '</span>');
+					}
+					document.write('<br>');
+        		}
+			function coluna(n){
+				let x=[]
+				let y=[]
+				for (let i = 0; i <= n; i++){
+					y=[]
+					for(let j = 0; j <= n; j++){
+						y.push(i*j)                  
+					}
+					x[i]=y
+			    }               
+				console.table(x)
+			}
+    	</script>
+	</body>
+</html>
